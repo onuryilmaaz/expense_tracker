@@ -2,13 +2,11 @@ import 'package:expense_tracker/widgets/expenses.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/services.dart';
 
-var kColorScheme = ColorScheme.fromSeed(
-  seedColor: const Color.fromARGB(255, 96, 59, 181),
-);
+var kColorScheme = ColorScheme.fromSeed(seedColor: Colors.indigoAccent);
 
 var kDarkColorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
-  seedColor: const Color.fromARGB(255, 5, 99, 125),
+  seedColor: Colors.white70,
 );
 
 void main() {
@@ -21,6 +19,10 @@ void main() {
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark().copyWith(
         colorScheme: kDarkColorScheme,
+        appBarTheme: AppBarTheme().copyWith(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+        ),
         cardTheme: CardTheme().copyWith(
           color: kDarkColorScheme.secondaryContainer,
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -31,11 +33,18 @@ void main() {
             foregroundColor: kDarkColorScheme.onPrimaryContainer,
           ),
         ),
+        textTheme: ThemeData().textTheme.copyWith(
+          titleLarge: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontSize: 16,
+          ),
+        ),
       ),
       theme: ThemeData().copyWith(
         colorScheme: kColorScheme,
         appBarTheme: AppBarTheme().copyWith(
-          backgroundColor: kColorScheme.onPrimaryContainer,
+          backgroundColor: Colors.indigoAccent,
           foregroundColor: kColorScheme.primaryContainer,
         ),
         cardTheme: CardTheme().copyWith(
@@ -51,7 +60,7 @@ void main() {
         textTheme: ThemeData().textTheme.copyWith(
           titleLarge: TextStyle(
             fontWeight: FontWeight.bold,
-            color: kColorScheme.onSecondaryContainer,
+            color: Colors.black,
             fontSize: 16,
           ),
         ),
